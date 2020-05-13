@@ -1,0 +1,31 @@
+
+.gallery{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+  grid-column: 2;
+  padding: 50px 0;
+  margin:0;
+}
+.photo-container-gallery{
+  position: relative;
+}
+.photo {
+  left: 0;
+  top: 0;
+  width: 100%;
+  object-fit: scale-down;
+  object-position: center;
+  transition: 0.3s;
+}
+.ratio4x3::before {
+  content: '';
+  position: absolute;
+  display: block;
+  padding-top: calc(100%/16 * 9);
+}
+@media (max-width: 990px) {
+  .gallery{
+    grid-template-columns: 1fr 1fr;
+  }
+}
